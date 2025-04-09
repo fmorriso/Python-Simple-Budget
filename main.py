@@ -1,6 +1,3 @@
-from prometheus_client import values
-
-
 def get_dollar_amount():
     while True:
         try:
