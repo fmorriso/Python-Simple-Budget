@@ -7,6 +7,7 @@ def get_dollar_amount():
             print("Please enter a number.")
             continue
 
+
 def get_type():
     while True:
         response = input('Enter type budget type [e]xpense or [i]ncome ')
@@ -17,9 +18,11 @@ def get_type():
         else:
             print("Please enter either [e]xpense or [i]ncome")
 
+
 def get_category():
     key = input('Enter the category')
     return key.lower()
+
 
 def ask_yes_no_question(question):
     response = input(question)
@@ -29,12 +32,12 @@ def ask_yes_no_question(question):
         return True
     return False
 
+
 #### MAIN PROGRAM STARTS HERE ####
 # 1. establish budget
 budget = {'income': {}, 'expenses': {}}
 total_income = 0
 total_expenses = 0
-
 
 while True:
     # 2. get main user input
@@ -71,8 +74,6 @@ def display_budget():
         for cat, dollar_string in sub_dict.items():
             amount = float(dollar_string)
             print(' ' * 2 + cat + ' ' + str(amount))
-
-
 
 
 display_budget()
