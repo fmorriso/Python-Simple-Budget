@@ -16,4 +16,4 @@ Simple budget program using a nested dictionary.
 | 2025-04-09 | Initial creation |
 
 ## References
-* []()
+* [Python locale](https://docs.python.org/3/library/locale.html)

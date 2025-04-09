@@ -11,9 +11,6 @@ budget = {
         BudgetKey.EXPENSES: 0}
 }
 
-# get ready to format dollars and cents correctly
-locale.setlocale(locale.LC_ALL, '')
-
 def get_dollar_amount():
     while True:
         try:
@@ -64,6 +61,8 @@ def update_budget(top_key, cat_key, money,):
 
 
 def display_budget():
+    # get ready to format dollars and cents correctly
+    locale.setlocale(locale.LC_ALL, '')
     for top_key, sub_dict in budget.items():
         print(top_key)
         for cat, dollar_string in sub_dict.items():
