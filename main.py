@@ -1,11 +1,18 @@
 # 1. establish budget
+import locale
+
+from budget_key import BudgetKey
+
 budget = {
-    'income': {},
-    'expenses': {},
+    BudgetKey.INCOME: {},
+    BudgetKey.EXPENSES: {},
     'totals': {
-        'income': 0,
-        'expenses': 0}
+        BudgetKey.INCOME: 0,
+        BudgetKey.EXPENSES: 0}
 }
+
+# get ready to format dollars and cents correctly
+locale.setlocale(locale.LC_ALL, '')
 
 def get_dollar_amount():
     while True:
@@ -21,9 +28,9 @@ def get_type():
     while True:
         response = input('Enter budget type [e]xpense or [i]ncome ').lower()
         if response[:1] == 'e':
-            return 'expenses'
+            return BudgetKey.EXPENSES
         elif response[:1] == 'i':
-            return 'income'
+            return BudgetKey.INCOME
         else:
             print("Please enter either [e]xpense or [i]ncome")
 
@@ -53,15 +60,15 @@ def update_budget(top_key, cat_key, money,):
         budget[top_key][cat_key] = 0
     budget[top_key][cat_key] += money
 
-    budget['totals'][top_key] += money
+    budget[BudgetKey.TOTALS][top_key] += money
 
 
 def display_budget():
     for top_key, sub_dict in budget.items():
         print(top_key)
         for cat, dollar_string in sub_dict.items():
-            amount = float(dollar_string)
-            print(' ' * 2 + cat + ' ' + str(amount))
+            amount = locale.currency( float(dollar_string), grouping=True )
+            print(' ' * 2 + cat + ' ' + amount)
 
 
 #### MAIN PROGRAM LOGIC STARTS HERE ####
