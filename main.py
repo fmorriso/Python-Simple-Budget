@@ -57,7 +57,7 @@ def ask_yes_no_question(question):
     return False
 
 
-def update_budget(top_key, cat_key, money, ):
+def update_budget(top_key, cat_key, money):
     if cat_key not in budget[top_key].keys():
         budget[top_key][cat_key] = 0
     budget[top_key][cat_key] += money
