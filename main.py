@@ -1,5 +1,11 @@
 # 1. establish budget
-budget = {'income': {}, 'expenses': {}, 'totals': {'income': 0, 'expenses': 0}}
+budget = {
+    'income': {},
+    'expenses': {},
+    'totals': {
+        'income': 0,
+        'expenses': 0}
+}
 
 def get_dollar_amount():
     while True:
