@@ -91,6 +91,8 @@ print(f'Simple Budget program using python version {get_python_version()}')
 if os.path.isfile('budget.json'):
     with open('budget.json', 'r') as f:
         budget = json.load(f)
+        print('Previous budget:')
+        display_budget()
 
 while True:
     # 2. get main user input
