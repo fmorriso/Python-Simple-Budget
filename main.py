@@ -1,10 +1,7 @@
-import sys
-
-# 1. establish budget
-import locale
-
+import json, locale, os, sys
 from budget_key import BudgetKey
 
+# 1. establish budget
 budget = {
     BudgetKey.INCOME: {},
     BudgetKey.EXPENSES: {},
@@ -74,12 +71,22 @@ def display_budget():
             print(f'\t{cat:<20} {amount:>10}')
 
 
+def save_budget():
+    with open('budget.json', 'w') as f:
+        json.dump(budget, f, indent=4)
+
 def get_python_version() -> str:
     return f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
 
 
 #### MAIN PROGRAM LOGIC STARTS HERE ####
 print(f'Simple Budget program using python version {get_python_version()}')
+
+# if there is a previous budget, pull that in
+if os.path.isfile('budget.json'):
+    with open('budget.json', 'r') as f:
+        budget = json.load(f)
+
 while True:
     # 2. get main user input
     keep_going = ask_yes_no_question("Do you want to enter more budget entries? ")
@@ -93,3 +100,4 @@ while True:
     update_budget(type_key, category_key, dollar_amount)
 
 display_budget()
+save_budget()

@@ -1,0 +1,12 @@
+{
+    "income": {
+        "salary": 1200.0
+    },
+    "expenses": {
+        "food": 25.0
+    },
+    "totals": {
+        "income": 1200.0,
+        "expenses": 25.0
+    }
+}
