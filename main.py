@@ -41,7 +41,7 @@ def get_category():
     while True:
         key = input('Enter the category: ')
         if key is None or len(key) == 0:
-            print('Please enter a category')
+            continue
         else:
             break
 
