@@ -19,7 +19,7 @@ def get_dollar_amount():
 
 def get_type():
     while True:
-        response = input('Enter type budget type [e]xpense or [i]ncome ')
+        response = input('Enter budget type [e]xpense or [i]ncome ')
         if response[:1].lower() == 'e':
             return 'expenses'
         elif response[:1].lower() == 'i':
