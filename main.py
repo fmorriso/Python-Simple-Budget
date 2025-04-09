@@ -1,4 +1,8 @@
-import json, locale, os, sys
+import json
+import locale
+import os
+import sys
+
 from budget_key import BudgetKey
 
 # 1. establish budget
@@ -73,7 +77,8 @@ def display_budget():
 
 def save_budget():
     with open('budget.json', 'w') as f:
-        json.dump(budget, f, indent=4)
+        json.dump(budget, f, indent = 4)
+
 
 def get_python_version() -> str:
     return f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
