@@ -3,11 +3,12 @@ Simple budget program using a nested dictionary.
 
 ## Tools Used
 
-| Tool     |  Version |
-|:---------|---------:|
-| Python   |   3.13.2 |
-| PyCharm  | 2024.3.5 |
-| VSCode   |   1.99.0 |
+| Tool    |  Version |
+|:--------|---------:|
+| Python  |   3.13.2 |
+| pathlib |    1.0.1 |
+| PyCharm | 2024.3.5 |
+| VSCode  |   1.99.0 |
 
 ## Change History
 

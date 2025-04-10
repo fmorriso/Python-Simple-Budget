@@ -1,7 +1,7 @@
 import json
 import locale
-import os
 import sys
+from pathlib import Path
 
 from budget_key import BudgetKey
 
@@ -67,7 +67,8 @@ def display_budget():
 
 
 def save_budget():
-    with open(BUDGET_FILE, 'w') as f:
+    budget_path = Path(BUDGET_FILE)
+    with open(budget_path, 'w') as f:
         json.dump(budget, f, indent = 4)
 
 
@@ -76,8 +77,9 @@ def get_python_version() -> str:
 
 
 def get_previous_budget() -> dict:
-    if os.path.isfile(BUDGET_FILE):
-        with open(BUDGET_FILE, 'r') as f:
+    budget_path = Path(BUDGET_FILE)
+    if budget_path.is_file():
+        with open(budget_path, 'r') as f:
             contents = json.load(f)
     else:
         contents = {
