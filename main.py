@@ -56,9 +56,11 @@ def update_budget(top_key, cat_key, money):
     budget[BudgetKey.TOTALS][top_key] += money
 
 
-def display_budget():
+def display_budget(heading: str = None):
     # get ready to format dollars and cents correctly
     locale.setlocale(locale.LC_ALL, '')
+    if heading is not None:
+        print(heading)
     for top_key, sub_dict in budget.items():
         print(top_key)
         for cat, dollar_string in sub_dict.items():
@@ -98,8 +100,7 @@ def get_previous_budget() -> dict:
 print(f'Simple Budget program using python version {get_python_version()}')
 
 budget = get_previous_budget()
-print('Initial budget:')
-display_budget()
+display_budget('Initial budget:')
 
 while True:
     # 2. get main user input
@@ -113,5 +114,5 @@ while True:
 
     update_budget(type_key, category_key, dollar_amount)
 
-display_budget()
+display_budget('New budget:')
 save_budget()

@@ -1,13 +1,14 @@
 {
     "income": {
-        "salary": 2900.87
+        "salary": 2900.87,
+        "tips": 25.0
     },
     "expenses": {
         "food": 25.0,
         "clothing": 233.77
     },
     "totals": {
-        "income": 2900.87,
+        "income": 2925.87,
         "expenses": 258.77
     }
 }
