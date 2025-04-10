@@ -5,6 +5,7 @@ import sys
 
 from budget_key import BudgetKey
 
+BUDGET_FILE = 'budget.json'
 
 def get_dollar_amount():
     while True:
@@ -66,7 +67,7 @@ def display_budget():
 
 
 def save_budget():
-    with open('budget.json', 'w') as f:
+    with open(BUDGET_FILE, 'w') as f:
         json.dump(budget, f, indent = 4)
 
 
@@ -75,8 +76,8 @@ def get_python_version() -> str:
 
 
 def get_previous_budget() -> dict:
-    if os.path.isfile('budget.json'):
-        with open('budget.json', 'r') as f:
+    if os.path.isfile(BUDGET_FILE):
+        with open(BUDGET_FILE, 'r') as f:
             contents = json.load(f)
     else:
         contents = {
