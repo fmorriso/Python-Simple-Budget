@@ -5,16 +5,6 @@ import sys
 
 from budget_key import BudgetKey
 
-# 1. establish budget
-budget = {
-    BudgetKey.INCOME: {},
-    BudgetKey.EXPENSES: {},
-    'totals': {
-        BudgetKey.INCOME: 0,
-        BudgetKey.EXPENSES: 0
-    }
-}
-
 
 def get_dollar_amount():
     while True:
@@ -84,15 +74,29 @@ def get_python_version() -> str:
     return f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
 
 
+def get_previous_budget() -> dict:
+    if os.path.isfile('budget.json'):
+        with open('budget.json', 'r') as f:
+            contents = json.load(f)
+    else:
+        contents = {
+            BudgetKey.INCOME: {},
+            BudgetKey.EXPENSES: {},
+            'totals': {
+                BudgetKey.INCOME: 0,
+                BudgetKey.EXPENSES: 0
+            }
+        }
+
+    return contents
+
+
 #### MAIN PROGRAM LOGIC STARTS HERE ####
 print(f'Simple Budget program using python version {get_python_version()}')
 
-# if there is a previous budget, pull that in
-if os.path.isfile('budget.json'):
-    with open('budget.json', 'r') as f:
-        budget = json.load(f)
-        print('Previous budget:')
-        display_budget()
+budget = get_previous_budget()
+print('Initial budget:')
+display_budget()
 
 while True:
     # 2. get main user input
