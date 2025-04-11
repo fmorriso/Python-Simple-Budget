@@ -99,7 +99,7 @@ def get_previous_budget() -> dict:
 #### MAIN PROGRAM LOGIC STARTS HERE ####
 print(f'Simple Budget program using python version {get_python_version()}')
 
-budget = get_previous_budget()
+budget: dict = get_previous_budget()
 display_budget('Initial budget:')
 
 while True:
@@ -108,9 +108,9 @@ while True:
     if not keep_going:
         break
 
-    type_key = get_type()
-    category_key = get_category()
-    dollar_amount = get_dollar_amount()
+    type_key: BudgetKey = get_type()
+    category_key: str = get_category()
+    dollar_amount: float = get_dollar_amount()
 
     update_budget(type_key, category_key, dollar_amount)
 
