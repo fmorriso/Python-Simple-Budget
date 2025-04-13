@@ -12,9 +12,10 @@ Simple budget program using a nested dictionary.
 
 ## Change History
 
-| Date       | Description      |
-|:-----------|:-----------------|
-| 2025-04-09 | Initial creation |
+| Date       | Description          |
+|:-----------|:---------------------|
+| 2025-04-09 | Initial creation     |
+| 2025-04-13 | add requirements.txt |
 
 ## References
 * [Python locale](https://docs.python.org/3/library/locale.html)
