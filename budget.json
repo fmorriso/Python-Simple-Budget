@@ -5,10 +5,11 @@
     },
     "expenses": {
         "food": 25.0,
-        "clothing": 233.77
+        "clothing": 233.77,
+        "rent": 1987.0
     },
     "totals": {
         "income": 2925.87,
-        "expenses": 258.77
+        "expenses": 2245.77
     }
 }
