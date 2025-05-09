@@ -12,11 +12,12 @@ Simple budget program using a nested dictionary.
 
 ## Change History
 
-| Date       | Description                         |
-|:-----------|:------------------------------------|
-| 2025-04-09 | Initial creation                    |
-| 2025-04-13 | add requirements.txt                |
-| 2025-04-14 | verify code runs with python 3.13.3 |
+| Date       | Description                                 |
+|:-----------|:--------------------------------------------|
+| 2025-04-09 | Initial creation                            |
+| 2025-04-13 | add requirements.txt                        |
+| 2025-04-14 | verify code runs with python 3.13.3         |
+| 2025-05-09 | update readme to show latest versions used. | 
 
 ## References
 * [Python locale](https://docs.python.org/3/library/locale.html)
