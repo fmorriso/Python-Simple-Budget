@@ -1,7 +1,8 @@
 {
     "income": {
         "salary": 2900.87,
-        "tips": 25.0
+        "tips": 25.0,
+        "gambling winnings": 333.33
     },
     "expenses": {
         "food": 25.0,
@@ -9,7 +10,7 @@
         "rent": 1987.0
     },
     "totals": {
-        "income": 2925.87,
+        "income": 3259.2,
         "expenses": 2245.77
     }
 }

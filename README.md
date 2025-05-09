@@ -7,8 +7,8 @@ Simple budget program using a nested dictionary.
 |:--------|---------:|
 | Python  |   3.13.3 |
 | pathlib |    1.0.1 |
-| PyCharm | 2024.3.5 |
-| VSCode  |   1.99.0 |
+| PyCharm | 2025.1.1 |
+| VSCode  |  1.100.0 |
 
 ## Change History
 

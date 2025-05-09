@@ -7,6 +7,7 @@ from budget_key import BudgetKey
 
 BUDGET_FILE = 'budget.json'
 
+
 def get_dollar_amount():
     while True:
         try:
@@ -17,7 +18,7 @@ def get_dollar_amount():
             continue
 
 
-def get_type():
+def get_type() -> BudgetKey:
     while True:
         response = input('Enter budget type [e]xpense or [i]ncome ').lower()
         if response[:1] == 'e':
@@ -28,7 +29,7 @@ def get_type():
             print("Please enter either [e]xpense or [i]ncome")
 
 
-def get_category():
+def get_category() -> str:
     while True:
         key = input('Enter the category: ')
         if key is None or len(key) == 0:
@@ -39,7 +40,7 @@ def get_category():
     return key.lower()
 
 
-def ask_yes_no_question(question):
+def ask_yes_no_question(question) -> bool:
     response = input(question)
     if response is None or len(response) == 0:
         return True
@@ -48,7 +49,7 @@ def ask_yes_no_question(question):
     return False
 
 
-def update_budget(top_key, cat_key, money):
+def update_budget(top_key, cat_key, money) -> None:
     if cat_key not in budget[top_key].keys():
         budget[top_key][cat_key] = 0
     budget[top_key][cat_key] += money
